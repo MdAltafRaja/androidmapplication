@@ -1,8 +1,20 @@
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.0'
+    }
+}
+
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
+
+
+
 
 android {
     namespace 'com.juspay.mylibrary'
@@ -64,18 +76,19 @@ dependencies {
 //        }
 //    }
 //}
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.MdAltafRaja'
-            artifactId = 'abcd'
-            version = '2.0.0'
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId = 'com.github.MdAltafRaja'
+//            artifactId = 'abcd'
+//            version = '2.0.0'
+//
+//
+//            pom {
+//                description = 'A description of my library'
+//
+//            }
+//        }
+//    }
+//}
 
-
-            pom {
-                description = 'A description of my library'
-
-            }
-        }
-    }
-}
