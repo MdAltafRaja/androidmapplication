@@ -12,6 +12,14 @@ android {
         minSdk 21
         targetSdk 32
 
+        publishing {
+            multipleVariants {
+                withSourcesJar()
+                withJavadocJar()
+                allVariants()
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -41,4 +49,33 @@ dependencies {
     implementation "com.facebook.react:react-native:0.70.0" // From node_modules
     implementation "org.webkit:android-jsc:+"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//
+//                groupId = 'com.github.MdAltafRaja'
+//                artifactId = 'abcd'
+//                version = '1.0.0'
+//            }
+//        }
+//    }
+//}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.MdAltafRaja'
+            artifactId = 'abcd'
+            version = '2.0.0'
+
+
+            pom {
+                description = 'A description of my library'
+
+            }
+        }
+    }
 }
